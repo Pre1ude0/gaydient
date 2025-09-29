@@ -17,6 +17,9 @@ interface Config {
 
   symmetry: boolean;
   setSymmetry: (symmetry: boolean) => void;
+
+  tailwindcss: boolean;
+  setTailwindcss: (tailwindcss: boolean) => void;
 }
 
 export const useConfigStore = create<Config>((set) => ({
@@ -34,4 +37,7 @@ export const useConfigStore = create<Config>((set) => ({
 
   symmetry: true,
   setSymmetry: (symmetry) => set({ symmetry }),
+
+  tailwindcss: false,
+  setTailwindcss: (tailwindcss) => set({ tailwindcss }),
 }));

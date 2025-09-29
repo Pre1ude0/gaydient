@@ -18,6 +18,7 @@ export const Gradient = ({ name, colours }: GradientProps) => {
   const reverse = useConfigStore((state) => state.reverse);
   const hardStops = useConfigStore((state) => state.hardStops);
   const symmetry = useConfigStore((state) => state.symmetry);
+  const tailwindcss = useConfigStore((state) => state.tailwindcss);
 
   const isSymmetrical = colours.at(0) === colours.at(-1);
 
@@ -38,18 +39,15 @@ export const Gradient = ({ name, colours }: GradientProps) => {
   const gradient = `${type}-gradient(${directionString}${stops})`;
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(gradient);
+    navigator.clipboard.writeText(
+      tailwindcss ? `bg-[${gradient}]`.replaceAll(' ', '_') : gradient
+    );
   };
 
   return (
     <button className={styles.card} onClick={copyToClipboard}>
       <h2 className={styles.name}>{name}</h2>
-      <div
-        className={styles.gradient}
-        style={{
-          background: gradient,
-        }}
-      />
+      <div className={styles.gradient} style={{ background: gradient }} />
     </button>
   );
 };

@@ -79,6 +79,16 @@ export const ConfigPanel = () => {
         />
         Preserve symmetry
       </label>
+
+      <label className={styles.formElement} htmlFor="tailwindcss">
+        <input
+          type="checkbox"
+          id="tailwindcss"
+          checked={config.tailwindcss}
+          onChange={(e) => config.setTailwindcss(e.target.checked)}
+        />
+        Tailwind syntax
+      </label>
     </form>
   );
 };
