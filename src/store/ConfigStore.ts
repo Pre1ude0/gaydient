@@ -18,8 +18,8 @@ interface Config {
   symmetry: boolean;
   setSymmetry: (symmetry: boolean) => void;
 
-  tailwindcss: boolean;
-  setTailwindcss: (tailwindcss: boolean) => void;
+  useTailwindSyntax: boolean;
+  setUseTailwindSyntax: (useTailwindSyntax: boolean) => void;
 }
 
 export const useConfigStore = create<Config>((set) => ({
