@@ -18,7 +18,7 @@ export const Gradient = ({ name, colours }: GradientProps) => {
   const reverse = useConfigStore((state) => state.reverse);
   const hardStops = useConfigStore((state) => state.hardStops);
   const symmetry = useConfigStore((state) => state.symmetry);
-  const tailwindcss = useConfigStore((state) => state.tailwindcss);
+  const useTailwindSyntax = useConfigStore((state) => state.useTailwindSyntax);
 
   const isSymmetrical = colours.at(0) === colours.at(-1);
 
@@ -40,7 +40,7 @@ export const Gradient = ({ name, colours }: GradientProps) => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(
-      tailwindcss ? `bg-[${gradient}]`.replaceAll(' ', '_') : gradient
+      useTailwindSyntax ? `bg-[${gradient}]`.replaceAll(' ', '_') : gradient
     );
   };
 

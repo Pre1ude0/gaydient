@@ -38,6 +38,6 @@ export const useConfigStore = create<Config>((set) => ({
   symmetry: true,
   setSymmetry: (symmetry) => set({ symmetry }),
 
-  tailwindcss: false,
-  setTailwindcss: (tailwindcss) => set({ tailwindcss }),
+  useTailwindSyntax: false,
+  setUseTailwindSyntax: (useTailwindSyntax) => set({ useTailwindSyntax }),
 }));
